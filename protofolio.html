@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en" class="dark scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mahmoud Ibrahim | Data Engineer Portfolio</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            dark: '#0B1120',
+                            card: '#1E293B',
+                            accent: '#38BDF8',
+                            blue: '#0284C7'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'Cairo', 'sans-serif'],
+                        mono: ['Fira Code', 'monospace']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=Inter:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+
+    <style>
+        body { font-family: 'Inter', 'Cairo', sans-serif; }
+        .code-font { font-family: 'Fira Code', monospace; }
+        .glass-card {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: all 0.3s ease;
+        }
+        .glass-card:hover {
+            border-color: rgba(56, 189, 248, 0.4);
+            box-shadow: 0 10px 30px -10px rgba(56, 189, 248, 0.2);
+            transform: translateY(-2px);
+        }
+        .bg-grid {
+            background-image: radial-gradient(rgba(56, 189, 248, 0.1) 1px, transparent 1px);
+            background-size: 24px 24px;
+        }
+    </style>
+</head>
+<body class="bg-[#0B1120] text-slate-100 antialiased selection:bg-sky-500 selection:text-white bg-grid relative overflow-x-hidden">
+
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[500px] bg-gradient-to-b from-sky-500/10 via-blue-600/5 to-transparent blur-3xl pointer-events-none -z-10"></div>
+
+    <nav class="fixed top-0 w-full z-40 bg-[#0B1120]/85 backdrop-blur-md border-b border-slate-800/80">
+        <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+            <a href="#" class="text-lg font-bold tracking-tight text-white code-font">
+                <span class="text-sky-400">&lt;</span>Mahmoud.DE <span class="text-sky-400">/&gt;</span>
+            </a>
+            <div class="hidden md:flex space-x-8 text-sm font-medium text-slate-300">
+                <a href="#about" class="hover:text-sky-400 transition">About</a>
+                <a href="#skills" class="hover:text-sky-400 transition">Skills</a>
+                <a href="#certifications" class="hover:text-sky-400 transition">Certifications</a>
+                <a href="#education" class="hover:text-sky-400 transition">Education</a>
+                <a href="#projects" class="hover:text-sky-400 transition">Projects</a>
+            </div>
+            <a href="#contact" class="px-5 py-2 text-xs font-bold rounded-lg bg-sky-500 hover:bg-sky-400 text-slate-950 transition shadow-[0_0_15px_rgba(56,189,248,0.3)]">Get In Touch</a>
+        </div>
+    </nav>
+
+    <section id="about" class="pt-32 pb-16 px-6 max-w-6xl mx-auto min-h-[75vh] flex items-center">
+        <div class="flex flex-col md:flex-row items-center gap-10 md:gap-14 w-full">
+            
+                <!-- Profile Image Container (قص الجزء السفلي لإزالة النجمة) -->
+            <div class="relative group shrink-0 w-36 md:w-48">
+                <!-- توهج خلفية خفيف -->
+                <div class="absolute -inset-0.5 bg-gradient-to-r from-sky-500 to-blue-600 rounded-2xl blur-sm opacity-30 group-hover:opacity-60 transition duration-500"></div>
+                
+                <!-- حاوية تقص الحافة السفلية فقط بمقدار خفيف -->
+                <div class="relative overflow-hidden rounded-2xl border border-sky-400/60 shadow-md">
+                    <img src="images/profile.jpg" alt="Mahmoud Ibrahim" class="w-full h-auto block -mb-5">
+                </div>
+            </div>
+
+            <div class="flex-1 text-center md:text-left">
+                <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-sky-500/10 border border-sky-500/20 text-sky-400 text-xs font-semibold mb-5">
+                    <span class="w-2 h-2 rounded-full bg-sky-400 animate-ping"></span> Available for Data Engineering Roles
+                </div>
+                <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight mb-2 text-white">Mahmoud Ibrahim</h1>
+                <h2 class="text-xl md:text-2xl font-bold text-sky-400 mb-5 code-font">Data Engineer</h2>
+                
+                <p class="text-slate-300 leading-relaxed text-sm md:text-base mb-8 max-w-2xl">
+                  Data Engineer bridging business strategy with engineering rigor. Backed by an <strong class="text-white">IT Management</strong> background and specialized <strong class="text-white">DEPI & ITI</strong> training, I architect scalable, zero-downtime ETL/ELT pipelines and automated workflows. By eliminating data silos and creating a trusted Single Source of Truth, I transform organizations into fully Data-Driven ecosystems—building robust infrastructures that seamlessly power Data Analysis and Machine Learning.
+                </p>
+
+                <div class="flex flex-wrap justify-center md:justify-start gap-4">
+                    <a href="#projects" class="px-6 py-3 rounded-xl bg-sky-500 hover:bg-sky-400 text-slate-950 text-sm font-bold transition shadow-lg shadow-sky-500/25">
+                        <i class="fas fa-rocket mr-2"></i> View Featured Projects
+                    </a>
+                    <a href="https://github.com/MahmoudIbrahimAbdulQader" target="_blank" class="px-6 py-3 rounded-xl bg-slate-800/80 hover:bg-slate-700 border border-slate-700 text-sm font-bold text-slate-200 transition flex items-center gap-2">
+                        <i class="fab fa-github text-lg"></i> GitHub Profile
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="skills" class="py-16 px-6 max-w-6xl mx-auto">
+        <div class="mb-10">
+            <h2 class="text-2xl md:text-3xl font-extrabold text-white mb-2"><i class="fas fa-microchip text-sky-400 mr-3"></i>Technical Expertise</h2>
+            <p class="text-slate-400 text-xs md:text-sm">Core technologies and infrastructure tools I specialize in.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="glass-card p-6 rounded-2xl">
+                <div class="w-12 h-12 rounded-xl bg-sky-500/10 border border-sky-500/20 flex items-center justify-center text-sky-400 mb-4">
+                    <i class="fas fa-network-wired text-xl"></i>
+                </div>
+                <h3 class="font-bold text-base text-white mb-2">Engineering & Pipelines</h3>
+                <p class="text-xs text-slate-400 leading-relaxed">ETL/ELT Processing, Data Pipelines Architecture, Relational Data Modeling, Feature Engineering, Data Cleansing.</p>
+            </div>
+
+            <div class="glass-card p-6 rounded-2xl">
+                <div class="w-12 h-12 rounded-xl bg-sky-500/10 border border-sky-500/20 flex items-center justify-center text-sky-400 mb-4">
+                    <i class="fas fa-code text-xl"></i>
+                </div>
+                <h3 class="font-bold text-base text-white mb-2">Languages & Scripting</h3>
+                <p class="text-xs text-slate-400 leading-relaxed">Python (Advanced Data Processing), SQL (Complex Queries & Optimization), C++.</p>
+            </div>
+
+            <div class="glass-card p-6 rounded-2xl">
+                <div class="w-12 h-12 rounded-xl bg-sky-500/10 border border-sky-500/20 flex items-center justify-center text-sky-400 mb-4">
+                    <i class="fas fa-database text-xl"></i>
+                </div>
+                <h3 class="font-bold text-base text-white mb-2">Databases & Storage</h3>
+                <p class="text-xs text-slate-400 leading-relaxed">PostgreSQL, SQL Server, Relational Schema Design, SQL Data Warehousing, Storage Optimization.</p>
+            </div>
+
+            <div class="glass-card p-6 rounded-2xl">
+                <div class="w-12 h-12 rounded-xl bg-sky-500/10 border border-sky-500/20 flex items-center justify-center text-sky-400 mb-4">
+                    <i class="fas fa-cubes text-xl"></i>
+                </div>
+                <h3 class="font-bold text-base text-white mb-2">Data Frameworks</h3>
+                <p class="text-xs text-slate-400 leading-relaxed">Pandas, NumPy, Scikit-learn, TensorFlow.</p>
+            </div>
+
+            <div class="glass-card p-6 rounded-2xl">
+                <div class="w-12 h-12 rounded-xl bg-sky-500/10 border border-sky-500/20 flex items-center justify-center text-sky-400 mb-4">
+                    <i class="fas fa-cloud text-xl"></i>
+                </div>
+                <h3 class="font-bold text-base text-white mb-2">Cloud & Tools</h3>
+                <p class="text-xs text-slate-400 leading-relaxed">Microsoft Azure Services, Git/GitHub Version Control, Linux/Unix Command Line.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="certifications" class="py-16 px-6 max-w-6xl mx-auto">
+        <div class="mb-10">
+            <h2 class="text-2xl md:text-3xl font-extrabold text-white mb-2"><i class="fas fa-certificate text-sky-400 mr-3"></i>Certifications & Training</h2>
+            <p class="text-slate-400 text-xs md:text-sm">Verified professional credentials with certificate preview support.</p>
+        </div>
+
+        <div class="space-y-6">
+            <div class="glass-card p-6 rounded-2xl flex flex-col md:flex-row justify-between items-start md:items-center gap-5">
+                <div class="space-y-2">
+                    <div class="flex items-center gap-2">
+                        <span class="text-[10px] font-bold px-2 py-0.5 rounded bg-sky-500/10 text-sky-400 border border-sky-500/20">Microsoft</span>
+                        <h3 class="text-base font-bold text-white">Microsoft Data Engineer Specialization</h3>
+                    </div>
+                    <p class="text-xs font-medium text-slate-300">Digital Egypt Pioneers Initiative (DEPI)</p>
+                    <p class="text-xs text-slate-400 max-w-2xl">Cloud Data Pipelines, Azure Services, Big Data Management & SQL Server Ecosystem.</p>
+                </div>
+                <button onclick="openModal('images/depi.jpg')" class="px-4 py-2 rounded-xl bg-sky-500/10 hover:bg-sky-500/20 text-sky-400 text-xs font-bold border border-sky-500/20 transition flex items-center gap-2 shrink-0">
+                    <i class="fas fa-image"></i> View Certificate
+                </button>
+            </div>
+
+            <div class="glass-card p-6 rounded-2xl flex flex-col md:flex-row justify-between items-start md:items-center gap-5">
+                <div class="space-y-2">
+                    <div class="flex items-center gap-2">
+                        <span class="text-[10px] font-bold px-2 py-0.5 rounded bg-red-500/10 text-red-400 border border-red-500/20">Huawei</span>
+                        <h3 class="text-base font-bold text-white">Huawei ICT Academy Certification</h3>
+                    </div>
+                    <p class="text-xs font-medium text-slate-300">Huawei ICT Academy</p>
+                    <p class="text-xs text-slate-400 max-w-2xl">Networking technologies, computing infrastructure, and cloud data architecture.</p>
+                </div>
+                <button onclick="openModal('images/huawei.jpg')" class="px-4 py-2 rounded-xl bg-sky-500/10 hover:bg-sky-500/20 text-sky-400 text-xs font-bold border border-sky-500/20 transition flex items-center gap-2 shrink-0">
+                    <i class="fas fa-image"></i> View Certificate
+                </button>
+            </div>
+
+            <div class="glass-card p-6 rounded-2xl flex flex-col md:flex-row justify-between items-start md:items-center gap-5">
+                <div class="space-y-2">
+                    <div class="flex items-center gap-2">
+                        <span class="text-[10px] font-bold px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">ITI</span>
+                        <h3 class="text-base font-bold text-white">ITI Professional Training Program</h3>
+                    </div>
+                    <p class="text-xs font-medium text-slate-300">Information Technology Institute (ITI)</p>
+                    <p class="text-xs text-slate-400 max-w-2xl">Practical software engineering principles, advanced data development, and analytics.</p>
+                </div>
+                <button onclick="openModal('images/iti.jpg')" class="px-4 py-2 rounded-xl bg-sky-500/10 hover:bg-sky-500/20 text-sky-400 text-xs font-bold border border-sky-500/20 transition flex items-center gap-2 shrink-0">
+                    <i class="fas fa-image"></i> View Certificate
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <section id="education" class="py-16 px-6 max-w-6xl mx-auto">
+        <div class="mb-10">
+            <h2 class="text-2xl md:text-3xl font-extrabold text-white mb-2"><i class="fas fa-graduation-cap text-sky-400 mr-3"></i>Academic Education</h2>
+            <p class="text-slate-400 text-xs md:text-sm">Formal academic qualifications and studies.</p>
+        </div>
+
+        <div class="glass-card p-6 md:p-8 rounded-2xl">
+            <div class="flex flex-col md:flex-row justify-between md:items-center gap-3 mb-4">
+                <h3 class="text-lg md:text-xl font-extrabold text-white">Bachelor in Information Technology Management (ITM)</h3>
+                <span class="px-4 py-1.5 rounded-full bg-slate-800 text-slate-300 text-[11px] font-bold border border-slate-700 w-fit shrink-0">
+                    Expected Graduation: July 2028
+                </span>
+            </div>
+            <p class="text-sky-400 font-semibold text-xs md:text-sm mb-5">Management Technology & Information System (MTIS)</p>
+            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-sky-500/10 text-sky-400 text-xs font-bold border border-sky-500/20 shadow-inner">
+                <i class="fas fa-star text-[#FBBF24]"></i> Academic Performance: GPA 3.56 / 4.00
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="py-16 px-6 max-w-6xl mx-auto">
+        <div class="mb-10">
+            <h2 class="text-2xl md:text-3xl font-extrabold text-white mb-2"><i class="fas fa-project-diagram text-sky-400 mr-3"></i>Featured Projects</h2>
+            <p class="text-slate-400 text-xs md:text-sm">Real-world Data Engineering implementations and case studies.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="glass-card p-6 md:p-8 rounded-2xl flex flex-col justify-between">
+                <div>
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="text-[10px] font-mono text-sky-400 bg-sky-500/10 px-2 py-1 rounded border border-sky-500/20">Project 01</span>
+                        <a href="https://github.com" target="_blank" class="text-slate-400 hover:text-white transition"><i class="fab fa-github text-xl"></i></a>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-3">Scalable Automated ETL Pipeline</h3>
+                    <p class="text-xs text-slate-300 leading-relaxed mb-6">
+                        Designed and deployed an automated data pipeline using Python and SQL to extract multi-source raw data, perform transformations, clean inconsistencies, and load structured schema into a centralized database.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="px-2.5 py-1 rounded bg-slate-800 text-[10px] font-mono text-slate-300 border border-slate-700">Python</span>
+                        <span class="px-2.5 py-1 rounded bg-slate-800 text-[10px] font-mono text-slate-300 border border-slate-700">SQL</span>
+                        <span class="px-2.5 py-1 rounded bg-slate-800 text-[10px] font-mono text-slate-300 border border-slate-700">Pandas</span>
+                        <span class="px-2.5 py-1 rounded bg-slate-800 text-[10px] font-mono text-slate-300 border border-slate-700">ETL</span>
+                    </div>
+                </div>
+                <a href="https://github.com" target="_blank" class="inline-flex items-center gap-2 text-xs font-bold text-sky-400 hover:text-sky-300 transition w-fit">
+                    Explore Codebase <i class="fas fa-arrow-right text-[10px]"></i>
+                </a>
+            </div>
+
+            <div class="glass-card p-6 md:p-8 rounded-2xl flex flex-col justify-between">
+                <div>
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="text-[10px] font-mono text-sky-400 bg-sky-500/10 px-2 py-1 rounded border border-sky-500/20">Project 02</span>
+                        <a href="https://github.com" target="_blank" class="text-slate-400 hover:text-white transition"><i class="fab fa-github text-xl"></i></a>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-3">Relational Data Warehouse & Analytics</h3>
+                    <p class="text-xs text-slate-300 leading-relaxed mb-6">
+                        Engineered optimized PostgreSQL relational schemas, star-schema data modeling, and automated daily materialized views to power analytics dashboards with low latency queries.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="px-2.5 py-1 rounded bg-slate-800 text-[10px] font-mono text-slate-300 border border-slate-700">PostgreSQL</span>
+                        <span class="px-2.5 py-1 rounded bg-slate-800 text-[10px] font-mono text-slate-300 border border-slate-700">Azure</span>
+                        <span class="px-2.5 py-1 rounded bg-slate-800 text-[10px] font-mono text-slate-300 border border-slate-700">Data Modeling</span>
+                    </div>
+                </div>
+                <a href="https://github.com" target="_blank" class="inline-flex items-center gap-2 text-xs font-bold text-sky-400 hover:text-sky-300 transition w-fit">
+                    Explore Codebase <i class="fas fa-arrow-right text-[10px]"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer & Contact Links -->
+    <footer id="contact" class="py-12 bg-[#070B14] border-t border-slate-800/80 px-6 text-center mt-10">
+        <div class="max-w-6xl mx-auto space-y-4">
+            <h2 class="text-xl font-extrabold text-white">Let's Connect</h2>
+            <p class="text-slate-400 text-xs max-w-md mx-auto">Alexandria, Egypt | Open for Data Engineering roles.</p>
+            
+            <div class="flex justify-center items-center gap-6 text-xl text-slate-300 pt-3">
+                <!-- GitHub Link -->
+                <a href="https://github.com/MahmoudIbrahimAbdulQader" target="_blank" rel="noopener noreferrer" class="hover:text-sky-400 transition transform hover:scale-110" aria-label="GitHub Profile">
+                    <i class="fab fa-github"></i>
+                </a>
+
+                <!-- LinkedIn Link -->
+                <a href="https://www.linkedin.com/in/eng--mahmoud-ibrahim" target="_blank" rel="noopener noreferrer" class="hover:text-sky-400 transition transform hover:scale-110" aria-label="LinkedIn Profile">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+
+                <!-- Email Link -->
+                <a href="mailto:mahmoud.ibrahim.eg1@gmail.com" class="hover:text-sky-400 transition transform hover:scale-110" aria-label="Send Email">
+                    <i class="fas fa-envelope"></i>
+                </a>
+            </div>
+
+            <p class="text-[11px] text-slate-500 pt-6 border-t border-slate-800/50">
+                © 2026 Mahmoud Ibrahim. All rights reserved.
+            </p>
+        </div>
+    </footer>
+
+    <div id="certModal" class="fixed inset-0 bg-black/90 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4 transition-opacity duration-300 opacity-0">
+        <div class="relative max-w-4xl w-full bg-slate-900 rounded-2xl border border-slate-700 p-2 shadow-2xl transform scale-95 transition-transform duration-300" id="modalContent">
+            <button onclick="closeModal()" class="absolute -top-12 right-0 text-slate-300 hover:text-white text-2xl font-bold transition">
+                <i class="fas fa-times"></i>
+            </button>
+            <img id="modalImg" src="" alt="Certificate" class="w-full h-auto rounded-xl object-contain max-h-[85vh] bg-white">
+        </div>
+    </div>
+
+    <script>
+        const modal = document.getElementById('certModal');
+        const modalContent = document.getElementById('modalContent');
+        const modalImg = document.getElementById('modalImg');
+
+        function openModal(imageSrc) {
+            modalImg.src = imageSrc;
+            modal.classList.remove('hidden');
+            // تأخير بسيط لتفعيل الأنيميشن بسلاسة
+            setTimeout(() => {
+                modal.classList.remove('opacity-0');
+                modalContent.classList.remove('scale-95');
+                modalContent.classList.add('scale-100');
+            }, 10);
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            modal.classList.add('opacity-0');
+            modalContent.classList.remove('scale-100');
+            modalContent.classList.add('scale-95');
+            setTimeout(() => {
+                modal.classList.add('hidden');
+            }, 300);
+            document.body.style.overflow = 'auto';
+        }
+
+        // إغلاق النافذة بالضغط خارجها
+        modal.addEventListener('click', function(e) {
+            if (e.target === this) closeModal();
+        });
+
+        // إغلاق النافذة بزر Esc
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && !modal.classList.contains('hidden')) closeModal();
+        });
+    </script>
+</body>
+</html>
