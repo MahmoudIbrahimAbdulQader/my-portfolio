@@ -49,71 +49,53 @@
             background-image: radial-gradient(rgba(56, 189, 248, 0.1) 1px, transparent 1px);
             background-size: 24px 24px;
         }
-       /* Precise Page-Break without Vertical Gaps */
-        @media print {
-            /* 1. إخفاء العناصر الثابتة وشريط التنقل */
-            header, 
-            nav, 
-            #navbar,
-            .no-print,
-            [class*="fixed"], 
-            [class*="sticky"] {
-                display: none !important;
-            }
-        
-            /* 2. إعدادات الورقة A4 */
-            @page {
-                size: A4 portrait;
-                margin: 8mm 10mm;
-            }
-        
-            html, body {
-                background-color: #0f172a !important;
-                color: #ffffff !important;
-                -webkit-print-color-adjust: exact !important;
-                print-color-adjust: exact !important;
-                height: auto !important;
-                min-height: 0 !important;
-            }
-        
-            /* 3. فصل كل قسم في صفحة جديدة وإلغاء الارتفاع الزائد تماماً */
-            section {
-                page-break-before: always !important;
-                break-before: page !important;
-                page-break-inside: avoid !important;
-                break-inside: avoid !important;
-                
-                /* إزالة التمدد والارتفاع الوهمي المسبب للفراغ */
-                display: block !important;
-                height: auto !important;
-                min-height: 0 !important;
-                
-                padding-top: 10px !important;
-                padding-bottom: 10px !important;
-                margin: 0 !important;
-            }
-        
-            /* إلغاء الصفحة الفارغة قبل القسم الأول */
-            section:first-of-type {
-                page-break-before: auto !important;
-                break-before: auto !important;
-            }
-        
-            /* 4. حماية العناصر والكروت من القطع بين الصفحات */
-            .group, 
-            article, 
-            h1, h2, h3,
-            div[class*="rounded-"] {
-                page-break-inside: avoid !important;
-                break-inside: avoid !important;
-            }
-        
-            /* 5. تقليل الهوامش بين الكروت داخل الصفحة */
-            .grid {
-                gap: 12px !important;
-            }
+    /* Clean & Simple Print Setup */
+    @media print {
+        /* 1. إخفاء شريط التنقل والأزرار */
+        header, 
+        nav, 
+        #navbar,
+        .no-print,
+        [class*="fixed"], 
+        [class*="sticky"] {
+            display: none !important;
         }
-
+    
+        /* 2. إعدادات الصفحة */
+        @page {
+            size: A4 portrait;
+            margin: 12mm 15mm;
+        }
+    
+        html, body {
+            background-color: #0f172a !important;
+            color: #ffffff !important;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+            height: auto !important;
+            min-height: 0 !important;
+        }
+    
+        /* 3. انسيابية الأقسام بشكل طبيعي وبدون فراغات */
+        section {
+            display: block !important;
+            height: auto !important;
+            min-height: 0 !important;
+            padding: 15px 0 !important;
+            margin: 0 0 10px 0 !important;
+            page-break-before: auto !important;
+            break-before: auto !important;
+        }
+    
+        /* 4. منع انقسام الكروت في منتصف الورقة */
+        .group, 
+        article, 
+        h1, h2, h3,
+        div[class*="rounded-"] {
+            page-break-inside: avoid !important;
+            break-inside: avoid !important;
+        }
+    }
        
     </style>
 </head>
