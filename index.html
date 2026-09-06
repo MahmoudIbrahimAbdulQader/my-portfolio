@@ -50,9 +50,10 @@
             background-size: 24px 24px;
         }
         
-        /* Optimized Print Styles for A4 PDF Export */
+      <style>
+        /* Optimized Compact Print Styles */
         @media print {
-            /* 1. إخفاء قائمة التنقل والشريط العلوي والعناصر الثابتة تماماً */
+            /* 1. إخفاء القوائم والعناصر الثابتة */
             header, 
             nav, 
             .no-print,
@@ -61,42 +62,39 @@
                 display: none !important;
             }
         
-            /* 2. ضبط هوامش صفحة الـ A4 */
+            /* 2. إعدادات الصفحة A4 */
             @page {
                 size: A4 portrait;
-                margin: 12mm 10mm;
+                margin: 8mm 10mm;
             }
         
-            /* 3. تهيئة الصفحة والرفع الكامل للارتفاعات العشوائية */
+            /* 3. إلغاء الارتفاعات الفائقة للشاشة */
             html, body {
                 background-color: #0f172a !important;
                 color: #ffffff !important;
                 -webkit-print-color-adjust: exact !important;
                 print-color-adjust: exact !important;
                 height: auto !important;
-                min-height: 0 !important;
-                overflow: visible !important;
-            }
-        
-            /* 4. إجبار كل قسم على الانفصال في صفحة جديدة دون تداخل */
-            section {
-                page-break-before: always !important;
-                break-before: page !important;
-                page-break-inside: avoid !important;
-                break-inside: avoid !important;
-                padding-top: 10px !important;
-                padding-bottom: 20px !important;
-                margin: 0 !important;
                 min-height: auto !important;
             }
         
-            /* إلغاء الصفحة الفارغة قبل القسم الأول */
-            section:first-of-type {
+            /* 4. جعل الأقسام تندمج وتتابع بسلاسة بدون صفحات فارغة */
+            section {
                 page-break-before: auto !important;
                 break-before: auto !important;
+                page-break-after: auto !important;
+                break-after: auto !important;
+                page-break-inside: avoid !important;
+                break-inside: avoid !important;
+                padding-top: 12px !important;
+                padding-bottom: 12px !important;
+                margin-top: 0 !important;
+                margin-bottom: 16px !important;
+                height: auto !important;
+                min-height: auto !important;
             }
         
-            /* 5. حماية الكروت والعناوين من الانقسام أو القطع */
+            /* 5. حماية العناصر والكروت من الانقسام في منتصف الصفحة */
             .group, 
             article, 
             h1, h2, h3,
@@ -105,12 +103,12 @@
                 break-inside: avoid !important;
             }
         
-            /* 6. تحسين توزيع الشبكات لتقليل الارتفاع وإحكام الصفحات */
+            /* 6. تقليل المسافات الداخلية للشبكات */
             .grid {
-                gap: 12px !important;
+                gap: 10px !important;
             }
         }
-
+</style>
 
 </style>
         
