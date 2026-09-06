@@ -49,75 +49,72 @@
             background-image: radial-gradient(rgba(56, 189, 248, 0.1) 1px, transparent 1px);
             background-size: 24px 24px;
         }
-        
-                
-            /* Precise 1-Section-Per-Page Print Layout */
-            @media print {
-                /* 1. إخفاء شريط التنقل والهيدر والأزرار تماماً */
-                header, 
-                nav, 
-                #navbar,
-                .no-print,
-                [class*="fixed"], 
-                [class*="sticky"] {
-                    display: none !important;
-                }
-            
-                /* 2. ضبط أبعاد ورقة A4 وهامش الطباعة */
-                @page {
-                    size: A4 portrait;
-                    margin: 10mm 12mm;
-                }
-            
-                html, body {
-                    background-color: #0f172a !important;
-                    color: #ffffff !important;
-                    -webkit-print-color-adjust: exact !important;
-                    print-color-adjust: exact !important;
-                    height: 100% !important;
-                }
-            
-                /* 3. إجبار كل قسم على صفحة منفصلة وتوسيط محتواه عمودياً */
-                section {
-                    page-break-before: always !important;
-                    break-before: page !important;
-                    page-break-inside: avoid !important;
-                    break-inside: avoid !important;
-                    
-                    /* توزيع المحتوى القصيرة في منتصف الصفحة بشكل متناسق */
-                    min-height: 90vh !important;
-                    display: flex !important;
-                    flex-direction: column !important;
-                    justify-content: center !important;
-                    
-                    padding: 10px 0 !important;
-                    margin: 0 !important;
-                }
-            
-                /* إلغاء الصفحة الفارغة قبل القسم الأول (Hero Section) */
-                section:first-of-type {
-                    page-break-before: auto !important;
-                    break-before: auto !important;
-                }
-            
-                /* 4. حماية العناصر الداخلية والكروت من القطع */
-                .group, 
-                article, 
-                h1, h2, h3,
-                div[class*="rounded-"] {
-                    page-break-inside: avoid !important;
-                    break-inside: avoid !important;
-                }
-            
-                /* 5. ضبط المسافات بين عناصر الشبكة */
-                .grid {
-                    gap: 14px !important;
-                }
+       /* Precise Page-Break without Vertical Gaps */
+        @media print {
+            /* 1. إخفاء العناصر الثابتة وشريط التنقل */
+            header, 
+            nav, 
+            #navbar,
+            .no-print,
+            [class*="fixed"], 
+            [class*="sticky"] {
+                display: none !important;
             }
-            
-
-</style>
         
+            /* 2. إعدادات الورقة A4 */
+            @page {
+                size: A4 portrait;
+                margin: 8mm 10mm;
+            }
+        
+            html, body {
+                background-color: #0f172a !important;
+                color: #ffffff !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                height: auto !important;
+                min-height: 0 !important;
+            }
+        
+            /* 3. فصل كل قسم في صفحة جديدة وإلغاء الارتفاع الزائد تماماً */
+            section {
+                page-break-before: always !important;
+                break-before: page !important;
+                page-break-inside: avoid !important;
+                break-inside: avoid !important;
+                
+                /* إزالة التمدد والارتفاع الوهمي المسبب للفراغ */
+                display: block !important;
+                height: auto !important;
+                min-height: 0 !important;
+                
+                padding-top: 10px !important;
+                padding-bottom: 10px !important;
+                margin: 0 !important;
+            }
+        
+            /* إلغاء الصفحة الفارغة قبل القسم الأول */
+            section:first-of-type {
+                page-break-before: auto !important;
+                break-before: auto !important;
+            }
+        
+            /* 4. حماية العناصر والكروت من القطع بين الصفحات */
+            .group, 
+            article, 
+            h1, h2, h3,
+            div[class*="rounded-"] {
+                page-break-inside: avoid !important;
+                break-inside: avoid !important;
+            }
+        
+            /* 5. تقليل الهوامش بين الكروت داخل الصفحة */
+            .grid {
+                gap: 12px !important;
+            }
+        }
+
+       
     </style>
 </head>
 <body class="bg-[#0B1120] text-slate-100 antialiased selection:bg-sky-500 selection:text-white bg-grid relative overflow-x-hidden">
