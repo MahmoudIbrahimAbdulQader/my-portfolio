@@ -49,6 +49,38 @@
             background-image: radial-gradient(rgba(56, 189, 248, 0.1) 1px, transparent 1px);
             background-size: 24px 24px;
         }
+        <style>
+/* Print Styles for PDF Export */
+        @media print {
+            /* إخفاء القوائم والأزرار الثابتة التي لا تهم في ملف الـ PDF */
+            nav, 
+            .no-print {
+                display: none !important;
+            }
+        
+            /* جعل كل قسم يبدأ في صفحة منفصلة */
+            section {
+                page-break-before: always !important;
+                break-before: page !important;
+                page-break-inside: avoid !important;
+                break-inside: avoid !important;
+            }
+        
+            /* إلغاء الصفحة الفاضية للقسم الأول */
+            section:first-of-type {
+                page-break-before: auto !important;
+                break-before: auto !important;
+            }
+        
+            /* الحفاظ على ألوان التصميم والخلفية الداكنة عند التصدير */
+            body, html {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                background-color: #0f172a !important; /* لون الخلفية الرئيسي */
+            }
+        }
+</style>
+        
     </style>
 </head>
 <body class="bg-[#0B1120] text-slate-100 antialiased selection:bg-sky-500 selection:text-white bg-grid relative overflow-x-hidden">
