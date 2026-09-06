@@ -49,36 +49,69 @@
             background-image: radial-gradient(rgba(56, 189, 248, 0.1) 1px, transparent 1px);
             background-size: 24px 24px;
         }
-        <style>
-/* Print Styles for PDF Export */
+        
+        /* Optimized Print Styles for A4 PDF Export */
         @media print {
-            /* إخفاء القوائم والأزرار الثابتة التي لا تهم في ملف الـ PDF */
+            /* 1. إخفاء قائمة التنقل والشريط العلوي والعناصر الثابتة تماماً */
+            header, 
             nav, 
-            .no-print {
+            .no-print,
+            [class*="fixed"], 
+            [class*="sticky"] {
                 display: none !important;
             }
         
-            /* جعل كل قسم يبدأ في صفحة منفصلة */
+            /* 2. ضبط هوامش صفحة الـ A4 */
+            @page {
+                size: A4 portrait;
+                margin: 12mm 10mm;
+            }
+        
+            /* 3. تهيئة الصفحة والرفع الكامل للارتفاعات العشوائية */
+            html, body {
+                background-color: #0f172a !important;
+                color: #ffffff !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                height: auto !important;
+                min-height: 0 !important;
+                overflow: visible !important;
+            }
+        
+            /* 4. إجبار كل قسم على الانفصال في صفحة جديدة دون تداخل */
             section {
                 page-break-before: always !important;
                 break-before: page !important;
                 page-break-inside: avoid !important;
                 break-inside: avoid !important;
+                padding-top: 10px !important;
+                padding-bottom: 20px !important;
+                margin: 0 !important;
+                min-height: auto !important;
             }
         
-            /* إلغاء الصفحة الفاضية للقسم الأول */
+            /* إلغاء الصفحة الفارغة قبل القسم الأول */
             section:first-of-type {
                 page-break-before: auto !important;
                 break-before: auto !important;
             }
         
-            /* الحفاظ على ألوان التصميم والخلفية الداكنة عند التصدير */
-            body, html {
-                -webkit-print-color-adjust: exact !important;
-                print-color-adjust: exact !important;
-                background-color: #0f172a !important; /* لون الخلفية الرئيسي */
+            /* 5. حماية الكروت والعناوين من الانقسام أو القطع */
+            .group, 
+            article, 
+            h1, h2, h3,
+            div[class*="rounded-"] {
+                page-break-inside: avoid !important;
+                break-inside: avoid !important;
+            }
+        
+            /* 6. تحسين توزيع الشبكات لتقليل الارتفاع وإحكام الصفحات */
+            .grid {
+                gap: 12px !important;
             }
         }
+
+
 </style>
         
     </style>
